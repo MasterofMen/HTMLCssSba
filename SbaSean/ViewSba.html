@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="sbaCss.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <Title>Your Account</Title>
+    </head>
+    <body>
+        <div class="jumbotron text-left" style="background-color: green; height: 80px; padding-top: 10px; padding-left: 20px;">
+            <h1 style="color: white;"><i class="fa fa-black-tie" aria-hidden="true";></i>My Bank
+            <a href="sba.html" style="color: white; margin-left: 70%; text-decoration: none;">Log Out</a></h1>
+        </div>
+        <h2 style="text-align: center; padding-bottom: 15px;">Welcome to Your Page</h2>
+        <div class="container" style="width: 60%; height: 80px; border-radius: 0%;">
+            <p>Checking</p>
+        </div>
+        <div class="container" style="width: 60%; height: 80px; margin-top: -16px; border-radius: 0%; border-top: black solid 1px;">
+            <p id="amount"></p>
+        </div>
+        <div style="text-align: center;">
+            <input id="num" type="text">
+            <button type="button" onclick="add()">Add</button>
+            <button type="button" onclick="subtract()">Subtract</button>
+            <div id="error" style="color: red;"></div>
+        </div>
+    </body>
+    <style>
+    p{
+        font-size: 40px;
+    }
+    </style>
+    <script src="sba.js"></script>
+</html>

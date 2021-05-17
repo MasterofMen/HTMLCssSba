@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="sbaCss.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Bank</title>
+    </head>
+    <body>
+        <div class="jumbotron text-left" style="background-color: green; height: 80px; padding-top: 10px; padding-left: 20px;">
+            <h1 style="color: white;"><i class="fa fa-black-tie" aria-hidden="true";></i>My Bank</h1>
+        </div>
+        <h2 style="text-align: center; padding-bottom: 15px;">Welcome to Online Banking</h2>
+        <div class="container">
+            <form action="ViewSba.html">
+                <div class="form-group">
+                    <label>User name:</label>
+                    <input type="text" class="form-control validation" placeholder="Enter Username" required>
+                    <label>Password:</label>
+                    <input type="password" id="passwordStrength" class="form-control validation" onkeyup="checkPassword(this.value)" placeholder="Enter password" required>
+                    <div class="text-center">
+                        <button id="button" type="submit" class="btn btn-primary">LOG IN</button>
+                    </div>
+                </div>
+            </form>
+            <a href="CreateSBA.html" style="color: green; font-size: 18px; margin-left: 75px;">Create Account</a>
+        </div>
+    </body>
+    <script type="text/javascript">
+    function checkPassword(password){
+        var button = document.getElementById("button");
+        var strength = document.getElementById("passwordStrength");
+        var regex = new Array();
+        regex.push("[A-Z]");
+        regex.push("[a-z]"); 
+        regex.push("[0-9]"); 
+        regex.push("[$@$!%*#?&]");
+
+        var passed = 0;
+        //validate for regulat expression
+        for(var i = 0; i<regex.length; i++){
+            if(new RegExp(regex[i]).test(password)){
+                passed++;
+            }
+        }
+        if(passed >= 4){
+            strength.style.borderBottomColor = "green";
+            button.disabled = false;
+        }else{
+            button.disabled = true;
+            strength.style.borderBottomColor = "red";
+        }
+    }
+    </script>
+</html>
